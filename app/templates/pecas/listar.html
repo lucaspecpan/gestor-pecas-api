@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Peças</title>
+</head>
+<body>
+    <h1>Peças Cadastradas</h1>
+    <a href="/pecas/nova">➕ Nova Peça</a>
+    <ul>
+        {% for peca in pecas %}
+            <li>{{ peca.codigo_sku }} - {{ peca.nome }} - R$ {{ peca.preco }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
