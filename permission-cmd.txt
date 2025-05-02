@@ -1,0 +1,5 @@
+#para que funcione toda vez que abrir o cmd
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# para iniciar (venv)
+.venv\Scripts\activate

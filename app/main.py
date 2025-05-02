@@ -20,3 +20,6 @@ async def home(request: Request):
 
 from app.routers import montadora
 app.include_router(montadora.router)
+
+from app.routers import peca
+app.include_router(peca.router)
