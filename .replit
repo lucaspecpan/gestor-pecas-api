@@ -1,0 +1,20 @@
+modules = ["python-3.11", "python-3.12", "web"]
+
+run = "uvicorn main:app --host=0.0.0.0 --port=10000"
+
+[nix]
+channel = "stable-24_05"
+packages = ["libxcrypt", "python312Packages.psycopg2", "python312Packages.uvicorn"]
+
+[[ports]]
+localPort = 3000
+externalPort = 3001
+
+[[ports]]
+localPort = 8000
+externalPort = 80
+exposeLocalhost = true
+
+[[ports]]
+localPort = 8050
+externalPort = 3000
