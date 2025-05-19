@@ -1,15 +1,16 @@
+# backend/database.py
+
 import os
-import psycopg2
+import requests
 from dotenv import load_dotenv
 
-# Carrega variáveis do .env
 load_dotenv()
 
-DB_URL = os.getenv("SUPABASE_DB_URL")
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_API_KEY = os.getenv("SUPABASE_API_KEY")
 
-# Força conexão segura com SSL
-if DB_URL and "sslmode" not in DB_URL:
-    DB_URL += "?sslmode=require"
-
-# Conexão com banco Supabase
-conn = psycopg2.connect(DB_URL)
+HEADERS = {
+    "apikey": SUPABASE_API_KEY,
+    "Authorization": f"Bearer {SUPABASE_API_KEY}",
+    "Content-Type": "application/json"
+}
