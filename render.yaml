@@ -12,6 +12,6 @@ services:
     startCommand: "sh start.sh"
     envVars:
       - key: SUPABASE_DB_URL
-        value: "postgresql://postgres:postgres@db.ribqygiejpffsyrwsspv.supabase.co:5432/postgres"
+        value: "postgresql://postgres:postgres@db.ribqygiejpffsyrwsspv.supabase.co:5432/postgres?sslmode=require"
       - key: SUPABASE_API_KEY
         value: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJpYnF5Z2llanBmZnN5cndzc3B2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc2MTg5NjIsImV4cCI6MjA2MzE5NDk2Mn0.46Ln8uiZ1vbTAB4aIXjPgS7tq0BsEErHpceFudlTqig"
