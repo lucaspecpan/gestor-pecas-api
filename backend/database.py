@@ -7,8 +7,9 @@ load_dotenv()
 
 DB_URL = os.getenv("SUPABASE_DB_URL")
 
-# Conexão simples com Supabase PostgreSQL
-conn = psycopg2.connect(DB_URL)
+# Força conexão segura com SSL
+if DB_URL and "sslmode" not in DB_URL:
+    DB_URL += "?sslmode=require"
 
-# Você pode usar conn.cursor() para executar queries diretas,
-# ou usar SQLAlchemy se preferir (adaptamos depois)
+# Conexão com banco Supabase
+conn = psycopg2.connect(DB_URL)
